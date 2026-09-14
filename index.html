@@ -1,368 +1,319 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b0804" />
-  <title>Dian Abidin — Graphic Designer</title>
-  <meta name="description" content="Portfolio Dian Abidin — Graphic Designer. Eksplorasi visual, desain, dan karya kreatif bernuansa elegan." />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080603">
+<title>Dian Abidin — Premium Portfolio</title>
+<meta name="description" content="Dian Abidin — Graphic Designer & Visual Creator">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap');
 
-    :root{
-      --bg:#090704;
-      --bg2:#120c05;
-      --panel:rgba(27,18,8,.72);
-      --gold:#d6a94d;
-      --gold2:#ffe7a0;
-      --cream:#fff5dc;
-      --muted:#bcae91;
-      --line:rgba(214,169,77,.23);
-      --shadow:0 25px 80px rgba(0,0,0,.5);
-      --radius:24px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      background:
-        radial-gradient(circle at 78% 5%,rgba(255,206,94,.12),transparent 24rem),
-        radial-gradient(circle at 8% 70%,rgba(255,190,70,.07),transparent 25rem),
-        var(--bg);
-      color:var(--cream);
-      font-family:"DM Sans",system-ui,sans-serif;
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-    body:before{
-      content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;z-index:-1;
-      background-image:
-        radial-gradient(circle at 20% 30%,#fff 0 1px,transparent 1.5px),
-        radial-gradient(circle at 75% 65%,#fff 0 1px,transparent 1.5px);
-      background-size:170px 150px,220px 190px;
-      mask-image:linear-gradient(to bottom,transparent,black 15%,black 80%,transparent);
-    }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1180px,92%);margin:auto}
-    .gold{color:var(--gold2)}
-    .eyebrow{letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-size:.75rem;font-weight:700}
-    h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif}
-    h2{font-size:clamp(2.6rem,6vw,5rem);line-height:.95}
-    section{padding:110px 0;position:relative}
-    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:48px}
-    .section-head p{max-width:440px;color:var(--muted)}
+:root{
+ --black:#070604;--black2:#100b05;--gold:#c99735;--gold2:#f7d980;--gold3:#fff0b9;
+ --text:#f8efd9;--muted:#b8a98c;--line:rgba(224,177,76,.23);
+ --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+.container{width:min(1180px,92%);margin:auto}
+h1,h2,h3{font-family:"Cormorant Garamond",serif}
+h2{font-size:clamp(3rem,7vw,6rem);line-height:.88;font-weight:500}
+.gold{color:var(--gold2)}
+.eyebrow{font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);font-weight:700}
+section{position:relative;padding:125px 0}
+::selection{background:var(--gold);color:#090603}
 
-    /* ornament */
-    .ornament{position:absolute;left:0;right:0;height:70px;opacity:.25;pointer-events:none;overflow:hidden}
-    .ornament.top{top:0}.ornament.bottom{bottom:0;transform:rotate(180deg)}
-    .ornament:before{
-      content:"";position:absolute;width:75%;height:50px;left:12%;
-      border-top:1px solid var(--gold);border-radius:50%;
-      box-shadow:0 -14px 0 -12px var(--gold),0 -28px 0 -25px var(--gold);
-    }
-    .spark{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff7d8;box-shadow:0 0 12px 4px rgba(255,223,127,.55);animation:twinkle 3.2s ease-in-out infinite}
-    .s1{top:26px;left:17%}.s2{top:44px;left:79%;animation-delay:1s}.s3{top:13px;left:61%;animation-delay:1.7s}
-    @keyframes twinkle{50%{opacity:.25;transform:scale(.55)}}
+/* PRELOADER */
+.loader{position:fixed;inset:0;z-index:100;background:#070604;display:grid;place-items:center;transition:opacity .7s var(--ease),visibility .7s}
+.loader.hide{opacity:0;visibility:hidden}
+.loader-inner{text-align:center}
+.loader-mark{font:5.5rem/1 "Great Vibes",cursive;color:var(--gold2);animation:pulse 1.8s ease-in-out infinite}
+.loader-line{width:180px;height:1px;background:rgba(247,217,128,.18);margin:22px auto 13px;overflow:hidden}
+.loader-line span{display:block;width:35%;height:100%;background:var(--gold2);animation:load 1.5s var(--ease) infinite}
+.loader p{font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted)}
+@keyframes load{from{transform:translateX(-120%)}to{transform:translateX(500%)}}
+@keyframes pulse{50%{transform:scale(1.04);opacity:.7}}
 
-    /* nav */
-    nav{
-      position:fixed;top:0;left:0;right:0;z-index:20;
-      background:linear-gradient(to bottom,rgba(7,5,3,.9),rgba(7,5,3,.35),transparent);
-      padding:18px 0;transition:.35s;
-    }
-    nav.scrolled{background:rgba(8,6,3,.9);backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.25)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between}
-    .brand{font-family:"Great Vibes",cursive;font-size:2rem;color:var(--gold2)}
-    .links{display:flex;gap:30px;align-items:center}
-    .links a{font-size:.85rem;color:#d9cdb4;position:relative}
-    .links a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;background:var(--gold2);transition:.3s}
-    .links a:hover:after,.links a.active:after{width:100%}
-    .menu{display:none;background:none;border:0;color:var(--gold2);font-size:1.5rem}
+/* CURSOR */
+.cursor,.cursor-dot{position:fixed;pointer-events:none;z-index:90;display:block}
+.cursor{width:42px;height:42px;border:1px solid rgba(247,217,128,.75);border-radius:50%;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s,border-color .25s}
+.cursor-dot{width:5px;height:5px;background:var(--gold3);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 16px var(--gold)}
+.cursor.hover{width:68px;height:68px;background:rgba(201,151,53,.08);border-color:var(--gold2)}
+@media(pointer:coarse){.cursor,.cursor-dot{display:none}}
 
-    /* hero */
-    .hero{min-height:100svh;display:grid;place-items:center;padding-top:90px;overflow:hidden}
-    .hero:after{
-      content:"";position:absolute;inset:0;pointer-events:none;
-      background:linear-gradient(90deg,rgba(9,7,4,.97) 0%,rgba(9,7,4,.78) 42%,rgba(9,7,4,.18) 100%);
-    }
-    .hero-bg{
-      position:absolute;inset:0;z-index:-2;
-      background-image:url("reference.png");
-      background-size:cover;background-position:center 25%;
-      filter:saturate(.85) contrast(1.05);
-      opacity:.42;
-      transform:scale(1.04);
-    }
-    .hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
-    .hero-copy h1{font-size:clamp(4.7rem,10vw,9rem);line-height:.76;margin:15px 0 25px}
-    .script{font-family:"Great Vibes",cursive;font-size:clamp(4rem,8vw,7rem);color:var(--gold);font-weight:400}
-    .hero-copy p{max-width:580px;color:#d1c3a7;font-size:1.05rem}
-    .actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
-    .btn{padding:13px 21px;border:1px solid var(--gold);border-radius:999px;font-weight:700;font-size:.86rem;transition:.3s}
-    .btn.primary{background:linear-gradient(135deg,#f3ca6c,#a97627);color:#130d05;border:0}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(214,169,77,.18)}
-    .portrait{
-      max-width:420px;margin-left:auto;position:relative;border:1px solid rgba(255,216,124,.45);
-      padding:10px;background:linear-gradient(145deg,rgba(255,221,139,.12),rgba(0,0,0,.35));
-      box-shadow:var(--shadow);transform:rotate(2deg);
-    }
-    .portrait:before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,216,124,.24);pointer-events:none}
-    .portrait img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:center 45%;filter:sepia(.18) saturate(.9)}
-    .portrait-label{position:absolute;bottom:27px;left:27px;right:27px;padding:14px 16px;background:rgba(9,7,4,.78);backdrop-filter:blur(8px);border-left:2px solid var(--gold)}
-    .portrait-label strong{display:block;font-family:"Cormorant Garamond";font-size:1.4rem}
-    .portrait-label span{font-size:.72rem;color:var(--muted)}
+/* GOLD WAVE */
+.wave{position:absolute;left:-8%;width:116%;height:190px;pointer-events:none;overflow:hidden;opacity:.72}
+.wave.top{top:0}.wave.bottom{bottom:0;transform:rotate(180deg)}
+.wave svg{width:100%;height:100%}
+.wave path{fill:none;stroke:url(#g);stroke-width:2;stroke-linecap:round}
+.wave .w2{opacity:.42;stroke-width:1}.wave .w3{opacity:.2;stroke-width:1}
+.stars{position:absolute;inset:0;pointer-events:none}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff4c8;box-shadow:0 0 14px 4px rgba(255,221,124,.7);animation:twinkle 2.8s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.2;transform:scale(.45)}}
 
-    /* about */
-    .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}
-    .monogram{font-family:"Great Vibes";font-size:9rem;color:var(--gold);line-height:.7;opacity:.75}
-    .about-copy p{color:#c9bca3;margin:18px 0}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
-    .stat{border-top:1px solid var(--line);padding-top:14px}
-    .stat b{font-family:"Cormorant Garamond";font-size:2.1rem;color:var(--gold2)}
-    .stat small{display:block;color:var(--muted)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;transition:.4s var(--ease)}
+nav.scrolled{background:rgba(7,6,4,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);padding:14px 0}
+.nav{display:flex;justify-content:space-between;align-items:center}
+.brand{font:2.1rem "Great Vibes",cursive;color:var(--gold2)}
+.links{display:flex;gap:32px}
+.links a{font-size:.78rem;color:#d7c9ac;position:relative}
+.links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--gold2);transition:.35s}
+.links a:hover:after,.links a.active:after{width:100%}
+.menu{display:none;background:none;border:0;color:var(--gold2);font-size:1.5rem}
 
-    /* cards */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:linear-gradient(150deg,rgba(46,31,12,.75),rgba(18,12,5,.75));
-      border:1px solid var(--line);border-radius:var(--radius);padding:26px;
-      transition:.35s;position:relative;overflow:hidden;
-    }
-    .card:before{content:"";position:absolute;width:130px;height:130px;right:-60px;top:-60px;border:1px solid rgba(255,220,130,.18);border-radius:50%}
-    .card:hover{transform:translateY(-7px);border-color:rgba(255,216,124,.5);box-shadow:0 22px 60px rgba(0,0,0,.35)}
-    .card-num{font-family:"Cormorant Garamond";font-size:1rem;color:var(--gold)}
-    .card h3{font-size:2rem;margin:35px 0 8px}
-    .card p{font-size:.9rem;color:var(--muted)}
-    .tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}
-    .tag{font-size:.68rem;padding:5px 9px;border:1px solid var(--line);border-radius:999px;color:#d7c7a8}
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;overflow:hidden;padding-top:90px}
+.hero-bg{position:absolute;inset:0;background:
+ linear-gradient(90deg,rgba(7,6,4,.97) 0%,rgba(7,6,4,.78) 43%,rgba(7,6,4,.22)),
+ url("reference.png") center 26%/cover no-repeat;filter:contrast(1.08) saturate(.75);opacity:.5;z-index:-2;transform:scale(1.04)}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 20%,rgba(247,217,128,.16),transparent 25%),linear-gradient(to top,rgba(7,6,4,.95),transparent 40%);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:65px}
+.hero-copy h1{font-size:clamp(5rem,10vw,9.3rem);line-height:.7;margin:18px 0 28px}
+.script{font:clamp(4.2rem,9vw,8rem) "Great Vibes",cursive;color:var(--gold)}
+.hero-copy p{max-width:570px;color:#d0c1a4;font-size:1rem}
+.actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border:1px solid var(--gold);border-radius:999px;color:var(--text);background:transparent;cursor:pointer;transition:.35s var(--ease);font-size:.78rem;font-weight:700}
+.btn.primary{background:linear-gradient(135deg,#f5d274,#a87424);color:#110b04;border:0}
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 45px rgba(201,151,53,.2)}
+.frame{width:min(440px,100%);margin-left:auto;position:relative;padding:13px;transform:rotate(1.2deg);background:linear-gradient(145deg,#a97625,#f4d37b 35%,#6c4817 65%,#d9ad52);box-shadow:0 30px 100px rgba(0,0,0,.65)}
+.frame:before,.frame:after{content:"";position:absolute;inset:7px;border:1px solid rgba(255,241,185,.65);pointer-events:none}
+.frame:after{inset:20px;border-color:rgba(82,49,10,.7)}
+.frame img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;object-position:center 45%;filter:saturate(.9)}
+.frame-caption{position:absolute;left:30px;right:30px;bottom:28px;padding:13px 16px;background:rgba(8,6,4,.82);border-left:2px solid var(--gold2);backdrop-filter:blur(9px)}
+.frame-caption b{font:1.5rem "Cormorant Garamond";display:block}.frame-caption span{font-size:.65rem;color:var(--muted)}
 
-    /* portfolio */
-    .filters{display:flex;gap:8px;flex-wrap:wrap}
-    .filter{background:transparent;border:1px solid var(--line);color:#cdbf9f;border-radius:999px;padding:8px 14px;cursor:pointer}
-    .filter.active,.filter:hover{background:var(--gold);color:#100b04;border-color:var(--gold)}
-    .portfolio-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .work{grid-column:span 4;min-height:310px;position:relative;overflow:hidden;border-radius:22px;border:1px solid var(--line);cursor:pointer;background:#171006}
-    .work:nth-child(2),.work:nth-child(5){grid-column:span 8}
-    .work-inner{position:absolute;inset:0;padding:24px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(to top,rgba(7,5,3,.95),transparent 65%)}
-    .work-art{position:absolute;inset:0;transition:.6s}
-    .work:hover .work-art{transform:scale(1.06)}
-    .art1{background:radial-gradient(circle at 60% 30%,#d6a94d 0 2%,transparent 3%),linear-gradient(135deg,#0d0904,#5e421b 50%,#0b0804)}
-    .art2{background:radial-gradient(circle at 35% 35%,#ffe7a0 0 1%,transparent 2%),linear-gradient(145deg,#050505,#35220b 55%,#b27d29)}
-    .art3{background:linear-gradient(120deg,#080604 0 35%,#b47f2b 36% 37%,#080604 38% 63%,#d8ad55 64% 65%,#080604 66%)}
-    .art4{background:radial-gradient(ellipse at 50% 10%,#ffe5a0,transparent 28%),linear-gradient(#4a3214,#0a0704 65%)}
-    .art5{background:linear-gradient(155deg,#080604 20%,#6b4a1e 20% 23%,#080604 23% 65%,#b98b3d 65% 68%,#080604 68%)}
-    .art6{background:radial-gradient(circle at 72% 28%,#fff1c4 0 1%,transparent 2%),radial-gradient(circle at 20% 50%,#d6a94d 0 2%,transparent 3%),#0a0704}
-    .work h3{font-size:1.9rem}.work p{color:#c9b994;font-size:.8rem}
-    .hidden{display:none!important}
+/* SECTIONS */
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:50px}
+.section-head p{max-width:430px;color:var(--muted);font-size:.9rem}
+.about-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:75px}
+.initial{font:10rem/1 "Great Vibes",cursive;color:var(--gold);opacity:.7}
+.about-copy p{color:#c8b99d;margin:18px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:35px}
+.stat{border-top:1px solid var(--line);padding-top:13px}.stat b{font:2.3rem "Cormorant Garamond";color:var(--gold2)}.stat span{display:block;font-size:.67rem;color:var(--muted)}
 
-    /* contact */
-    .contact-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
-    .contact-info{padding:35px 0}
-    .contact-info p{color:var(--muted);margin:18px 0 30px}
-    .contact-line{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px}
-    .contact-line span:first-child{color:var(--gold)}
-    form{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
-    .field{margin-bottom:16px}
-    label{display:block;font-size:.75rem;color:var(--muted);margin-bottom:7px}
-    input,textarea{
-      width:100%;background:#0e0a05;border:1px solid var(--line);border-radius:12px;
-      color:var(--cream);padding:13px 14px;outline:none;font:inherit;transition:.25s
-    }
-    input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(214,169,77,.08)}
-    textarea{min-height:140px;resize:vertical}
-    .form-msg{margin-top:14px;color:var(--gold2);font-size:.85rem;min-height:20px}
-    footer{padding:30px 0 50px;border-top:1px solid var(--line);color:#8f826a;font-size:.8rem;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{min-height:300px;padding:27px;background:linear-gradient(145deg,rgba(39,26,10,.75),rgba(15,10,5,.78));border:1px solid var(--line);border-radius:20px;position:relative;overflow:hidden;transition:.45s var(--ease)}
+.card:hover{transform:translateY(-8px);border-color:rgba(247,217,128,.55);box-shadow:0 25px 70px rgba(0,0,0,.35)}
+.card:before{content:"";position:absolute;right:-70px;top:-70px;width:170px;height:170px;border:1px solid rgba(247,217,128,.14);border-radius:50%}
+.card h3{font-size:2.2rem;margin:52px 0 9px}.card p{color:var(--muted);font-size:.85rem}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:22px}.tag{border:1px solid var(--line);border-radius:999px;padding:5px 9px;font-size:.62rem;color:#d5c5a7}
 
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.show{opacity:1;transform:none}
+/* PORTFOLIO */
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:transparent;color:#c9b99a;cursor:pointer;font-size:.7rem;transition:.25s}
+.filter.active,.filter:hover{background:var(--gold);border-color:var(--gold);color:#0e0903}
+.portfolio-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.work{grid-column:span 4;height:350px;position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;cursor:pointer;background:#171006}
+.work:nth-child(2),.work:nth-child(5){grid-column:span 8}
+.art{position:absolute;inset:0;transition:.65s var(--ease)}
+.work:hover .art{transform:scale(1.08)}
+.art1{background:radial-gradient(circle at 70% 25%,#f4d47c 0 2%,transparent 3%),linear-gradient(140deg,#0a0704,#634518 55%,#0a0704)}
+.art2{background:radial-gradient(circle at 25% 25%,#fff0bd 0 1%,transparent 2%),linear-gradient(145deg,#060504,#4a300d 55%,#b77f27)}
+.art3{background:linear-gradient(120deg,#090704 0 35%,#b07a28 36% 37%,#090704 38% 63%,#d4a74c 64% 65%,#090704 66%)}
+.art4{background:radial-gradient(ellipse at 50% 4%,#ffe7a0,transparent 28%),linear-gradient(#503713,#090604 67%)}
+.art5{background:linear-gradient(155deg,#080604 20%,#76501c 20% 23%,#080604 23% 65%,#bd9041 65% 68%,#080604 68%)}
+.art6{background:radial-gradient(circle at 72% 28%,#fff2c7 0 1%,transparent 2%),radial-gradient(circle at 20% 50%,#d6a94d 0 2%,transparent 3%),#090604}
+.work-info{position:absolute;inset:auto 0 0;padding:27px;background:linear-gradient(transparent,rgba(5,4,2,.98) 70%)}
+.work-info h3{font-size:2rem}.work-info p{color:#c6b797;font-size:.72rem;margin-top:3px}.work-info .eyebrow{font-size:.56rem}
 
-    @media(max-width:850px){
-      section{padding:85px 0}
-      .links{position:absolute;top:70px;left:4%;right:4%;display:none;flex-direction:column;align-items:flex-start;background:#100b06;border:1px solid var(--line);padding:18px;border-radius:18px}
-      .links.open{display:flex}
-      .menu{display:block}
-      .hero-content,.about-grid,.contact-wrap{grid-template-columns:1fr}
-      .hero-content{gap:45px}
-      .portrait{margin:auto;width:min(380px,90%)}
-      .hero-copy{text-align:center}
-      .hero-copy p{margin:auto}
-      .actions{justify-content:center}
-      .cards{grid-template-columns:1fr}
-      .section-head{display:block}.section-head p{margin-top:16px}
-      .work,.work:nth-child(2),.work:nth-child(5){grid-column:span 12}
-    }
-    @media(prefers-reduced-motion:reduce){
-      *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-    }
-  </style>
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:50px}
+.contact-copy p{color:var(--muted);margin:18px 0 30px}
+.contact-line{display:flex;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.78rem}.contact-line b{color:var(--gold2);font-weight:500}
+.form{padding:31px;background:rgba(24,16,7,.75);border:1px solid var(--line);border-radius:22px}
+.field{margin-bottom:15px}.field label{display:block;font-size:.65rem;color:var(--muted);margin-bottom:6px}
+input,textarea{width:100%;padding:13px 14px;background:#0c0804;border:1px solid var(--line);border-radius:11px;color:var(--text);outline:none;transition:.25s}
+input:focus,textarea:focus{border-color:var(--gold2);box-shadow:0 0 0 3px rgba(201,151,53,.08)}
+textarea{min-height:140px;resize:vertical}.form-msg{min-height:22px;color:var(--gold2);font-size:.73rem;margin-top:10px}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(3,2,1,.82);backdrop-filter:blur(14px);display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.35s}
+.modal.open{opacity:1;visibility:visible}
+.modal-box{width:min(720px,100%);background:linear-gradient(145deg,#211508,#0d0905);border:1px solid var(--line);border-radius:24px;overflow:hidden;transform:translateY(25px) scale(.97);transition:.45s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.7)}
+.modal.open .modal-box{transform:none}
+.modal-art{height:280px}.modal-body{padding:28px}.modal-body h3{font-size:2.8rem}.modal-body p{color:var(--muted);margin:8px 0 22px}.close{position:absolute;top:20px;right:24px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(8,6,3,.65);color:var(--gold2);font-size:1.3rem;cursor:pointer}
+
+/* REVEAL + FOOTER */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.show{opacity:1;transform:none}
+footer{border-top:1px solid var(--line);padding:30px 0 55px;text-align:center;color:#85775f;font-size:.68rem}
+@media(max-width:850px){
+ section{padding:90px 0}.links{display:none;position:absolute;top:65px;left:4%;right:4%;padding:18px;flex-direction:column;gap:18px;background:#100b05;border:1px solid var(--line);border-radius:16px}.links.open{display:flex}.menu{display:block}
+ .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-copy{text-align:center}.hero-copy p{margin:auto}.actions{justify-content:center}.frame{margin:auto;width:min(390px,100%)}
+ .cards{grid-template-columns:1fr}.portfolio-grid{grid-template-columns:1fr}.work,.work:nth-child(2),.work:nth-child(5){grid-column:auto}.section-head{display:block}.section-head>p{margin-top:17px}.filters{margin-top:22px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
-<body>
-  <nav id="nav">
-    <div class="container nav-inner">
-      <a href="#home" class="brand">Dian.</a>
-      <button class="menu" id="menu" aria-label="Buka menu">☰</button>
-      <div class="links" id="links">
-        <a href="#about">About Me</a>
-        <a href="#project">Project</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Kontak</a>
-      </div>
-    </div>
-  </nav>
+<body class="lock">
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-bg"></div>
-      <div class="ornament top"><i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i></div>
-      <div class="container hero-content">
-        <div class="hero-copy reveal">
-          <div class="eyebrow">Graphic Designer · Visual Explorer</div>
-          <h1><span class="script">Porto</span><br><span class="gold">folio.</span></h1>
-          <p>Ruang eksplorasi visual di mana desain dan realitas menyatu. Setiap piksel, draft, dan tangkapan lensa memiliki ceritanya sendiri.</p>
-          <div class="actions">
-            <a class="btn primary" href="#portfolio">Lihat Karya</a>
-            <a class="btn" href="#contact">Mari Berkolaborasi</a>
-          </div>
-        </div>
-        <div class="portrait reveal">
-          <img src="reference.png" alt="Referensi visual portfolio Dian Abidin">
-          <div class="portrait-label">
-            <strong>DIAN ABIDIN</strong>
-            <span>Graphic Designer · Creative Visual</span>
-          </div>
-        </div>
-      </div>
-      <div class="ornament bottom"><i class="spark s1"></i><i class="spark s2"></i></div>
-    </section>
+<!-- PREMIUM LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-mark">D</div>
+    <div class="loader-line"><span></span></div>
+    <p>Preparing the visual experience</p>
+  </div>
+</div>
 
-    <section id="about">
-      <div class="container about-grid">
-        <div class="reveal">
-          <div class="eyebrow">01 — About Me</div>
-          <div class="monogram">D</div>
-        </div>
-        <div class="about-copy reveal">
-          <h2>Membuat visual yang <span class="gold">punya rasa.</span></h2>
-          <p>Saya Dian Abidin, seorang graphic designer yang menikmati proses mengubah ide sederhana menjadi visual yang kuat, bersih, dan memiliki karakter.</p>
-          <p>Saya percaya desain yang baik tidak harus ramai. Komposisi, tipografi, warna, dan detail kecil justru bisa bekerja bersama untuk menciptakan kesan yang elegan.</p>
-          <div class="stats">
-            <div class="stat"><b>∞</b><small>Eksplorasi ide</small></div>
-            <div class="stat"><b>2D</b><small>Visual & desain</small></div>
-            <div class="stat"><b>100%</b><small>Detail & karakter</small></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="cursor" id="cursor"></div><div class="cursor-dot" id="cursorDot"></div>
 
-    <section id="project">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="eyebrow">02 — Project</div><h2>Yang sedang <span class="gold">dikerjakan.</span></h2></div>
-          <p>Beberapa jenis pekerjaan yang bisa dikembangkan menjadi proyek kreatif dan kolaborasi.</p>
-        </div>
-        <div class="cards">
-          <article class="card reveal"><span class="card-num">01</span><h3>Branding</h3><p>Membangun identitas visual yang konsisten dari logo hingga sistem grafis.</p><div class="tags"><span class="tag">Logo</span><span class="tag">Identity</span><span class="tag">Guideline</span></div></article>
-          <article class="card reveal"><span class="card-num">02</span><h3>Poster</h3><p>Mengolah tipografi, foto, dan komposisi menjadi poster yang kuat secara visual.</p><div class="tags"><span class="tag">Event</span><span class="tag">Campaign</span><span class="tag">Social Media</span></div></article>
-          <article class="card reveal"><span class="card-num">03</span><h3>Visual</h3><p>Eksplorasi artwork, editing, fotografi, dan eksperimen visual bernuansa editorial.</p><div class="tags"><span class="tag">Artwork</span><span class="tag">Photo</span><span class="tag">Creative</span></div></article>
-        </div>
-      </div>
-    </section>
+<nav id="nav">
+ <div class="container nav">
+  <a class="brand" href="#home">Dian.</a>
+  <button class="menu" id="menu">☰</button>
+  <div class="links" id="links">
+   <a href="#about">About Me</a><a href="#project">Project</a><a href="#portfolio">Portfolio</a><a href="#contact">Kontak</a>
+  </div>
+ </div>
+</nav>
 
-    <section id="portfolio">
-      <div class="container">
-        <div class="section-head reveal">
-          <div><div class="eyebrow">03 — Portfolio</div><h2>Selected <span class="gold">works.</span></h2></div>
-          <div class="filters">
-            <button class="filter active" data-filter="all">Semua</button>
-            <button class="filter" data-filter="branding">Branding</button>
-            <button class="filter" data-filter="poster">Poster</button>
-            <button class="filter" data-filter="visual">Visual</button>
-          </div>
-        </div>
-        <div class="portfolio-grid">
-          <article class="work reveal" data-cat="branding" data-title="Noir Identity" data-desc="Eksplorasi identitas brand dengan nuansa hitam dan gold."><div class="work-art art1"></div><div class="work-inner"><span class="eyebrow">Branding</span><h3>Noir Identity</h3><p>Elegant visual identity</p></div></article>
-          <article class="work reveal" data-cat="poster" data-title="Golden Night" data-desc="Poster event dengan pendekatan editorial dan aksen cahaya keemasan."><div class="work-art art2"></div><div class="work-inner"><span class="eyebrow">Poster</span><h3>Golden Night</h3><p>Event campaign poster</p></div></article>
-          <article class="work reveal" data-cat="visual" data-title="Frame of Mind" data-desc="Eksperimen komposisi, portrait, dan framing untuk visual personal."><div class="work-art art3"></div><div class="work-inner"><span class="eyebrow">Visual</span><h3>Frame of Mind</h3><p>Portrait exploration</p></div></article>
-          <article class="work reveal" data-cat="poster" data-title="Afterglow" data-desc="Poster minimal dengan permainan cahaya, ruang kosong, dan tipografi."><div class="work-art art4"></div><div class="work-inner"><span class="eyebrow">Poster</span><h3>Afterglow</h3><p>Minimal visual study</p></div></article>
-          <article class="work reveal" data-cat="branding" data-title="Aurelia" data-desc="Konsep brand premium dengan karakter klasik dan modern."><div class="work-art art5"></div><div class="work-inner"><span class="eyebrow">Branding</span><h3>Aurelia</h3><p>Premium identity concept</p></div></article>
-          <article class="work reveal" data-cat="visual" data-title="Light Notes" data-desc="Eksplorasi abstrak yang memadukan glow, garis, dan tekstur visual."><div class="work-art art6"></div><div class="work-inner"><span class="eyebrow">Visual</span><h3>Light Notes</h3><p>Abstract visual experiment</p></div></article>
-        </div>
-      </div>
-    </section>
+<main>
+<section class="hero" id="home">
+ <div class="hero-bg"></div>
+ <div class="wave top"><svg viewBox="0 0 1600 190" preserveAspectRatio="none"><defs><linearGradient id="g"><stop stop-color="#fff3ba"/><stop offset=".4" stop-color="#c99735"/><stop offset="1" stop-color="#fff0b0"/></linearGradient></defs><path d="M0 40 C220 190 360 -40 590 80 S940 175 1180 70 S1400 10 1600 55"/><path class="w2" d="M0 65 C230 200 390 -10 620 105 S960 190 1200 90 S1430 35 1600 80"/><path class="w3" d="M0 90 C230 210 410 15 650 125 S990 200 1230 110 S1450 60 1600 105"/></svg></div>
+ <div class="stars"><i class="star" style="left:16%;top:18%"></i><i class="star" style="left:64%;top:12%;animation-delay:1s"></i><i class="star" style="left:82%;top:26%;animation-delay:1.7s"></i></div>
+ <div class="container hero-grid">
+  <div class="hero-copy reveal">
+   <div class="eyebrow">Graphic Designer · Visual Explorer</div>
+   <h1><span class="script">Porto</span><br><span class="gold">folio.</span></h1>
+   <p>Ruang eksplorasi visual di mana desain dan realitas menyatu. Setiap piksel, draft, dan tangkapan lensa memiliki ceritanya sendiri.</p>
+   <div class="actions"><a class="btn primary magnetic" href="#portfolio">Lihat Karya →</a><a class="btn magnetic" href="#contact">Mari Berkolaborasi</a></div>
+  </div>
+  <div class="frame reveal">
+   <img src="reference.png" alt="Dian Abidin">
+   <div class="frame-caption"><b>DIAN ABIDIN</b><span>Graphic Designer · Creative Visual</span></div>
+  </div>
+ </div>
+ <div class="wave bottom"><svg viewBox="0 0 1600 190" preserveAspectRatio="none"><defs><linearGradient id="g2"><stop stop-color="#fff3ba"/><stop offset=".5" stop-color="#c99735"/><stop offset="1" stop-color="#fff0b0"/></linearGradient></defs><path d="M0 40 C220 190 360 -40 590 80 S940 175 1180 70 S1400 10 1600 55"/><path class="w2" d="M0 65 C230 200 390 -10 620 105 S960 190 1200 90 S1430 35 1600 80"/></svg></div>
+</section>
 
-    <section id="contact">
-      <div class="container contact-wrap">
-        <div class="contact-info reveal">
-          <div class="eyebrow">04 — Kontak</div>
-          <h2>Let's make something <span class="gold">memorable.</span></h2>
-          <p>Punya ide, tugas desain, project sekolah, atau kolaborasi? Kirim pesan dan mari mulai dari sebuah konsep kecil.</p>
-          <div class="contact-line"><span>Email</span><span>dian@example.com</span></div>
-          <div class="contact-line"><span>Instagram</span><span>@dianabidin</span></div>
-          <div class="contact-line"><span>Location</span><span>Indonesia</span></div>
-        </div>
-        <form id="contactForm" class="reveal">
-          <div class="field"><label for="name">Nama</label><input id="name" required placeholder="Nama kamu"></div>
-          <div class="field"><label for="email">Email</label><input id="email" type="email" required placeholder="email@contoh.com"></div>
-          <div class="field"><label for="message">Pesan</label><textarea id="message" required placeholder="Ceritakan project atau ide kamu..."></textarea></div>
-          <button class="btn primary" type="submit">Kirim Pesan →</button>
-          <div class="form-msg" id="formMsg"></div>
-        </form>
-      </div>
-    </section>
-  </main>
+<section id="about">
+ <div class="container about-grid">
+  <div class="reveal"><div class="eyebrow">01 — About Me</div><div class="initial">D</div></div>
+  <div class="reveal"><h2>Membuat visual yang <span class="gold">punya rasa.</span></h2>
+   <p>Saya Dian Abidin, seorang graphic designer yang menikmati proses mengubah ide sederhana menjadi visual yang kuat, bersih, dan memiliki karakter.</p>
+   <p>Saya percaya desain yang baik tidak harus ramai. Komposisi, tipografi, warna, dan detail kecil bisa bekerja bersama untuk menciptakan kesan yang elegan.</p>
+   <div class="stats"><div class="stat"><b>∞</b><span>Eksplorasi ide</span></div><div class="stat"><b>2D</b><span>Visual & desain</span></div><div class="stat"><b>100%</b><span>Detail & karakter</span></div></div>
+  </div>
+ </div>
+</section>
 
-  <footer>© <span id="year"></span> Dian Abidin · Designed with intention.</footer>
+<section id="project">
+ <div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">02 — Project</div><h2>Yang sedang <span class="gold">dikerjakan.</span></h2></div><p>Beberapa bidang kreatif yang dapat dikembangkan menjadi proyek dan kolaborasi.</p></div>
+  <div class="cards">
+   <article class="card reveal"><span class="eyebrow">01</span><h3>Branding</h3><p>Membangun identitas visual yang konsisten dari logo hingga sistem grafis.</p><div class="tags"><span class="tag">Logo</span><span class="tag">Identity</span><span class="tag">Guideline</span></div></article>
+   <article class="card reveal"><span class="eyebrow">02</span><h3>Poster</h3><p>Mengolah tipografi, foto, dan komposisi menjadi poster yang kuat secara visual.</p><div class="tags"><span class="tag">Event</span><span class="tag">Campaign</span><span class="tag">Social</span></div></article>
+   <article class="card reveal"><span class="eyebrow">03</span><h3>Visual</h3><p>Eksplorasi artwork, editing, fotografi, dan eksperimen visual bernuansa editorial.</p><div class="tags"><span class="tag">Artwork</span><span class="tag">Photo</span><span class="tag">Creative</span></div></article>
+  </div>
+ </div>
+</section>
 
-  <script>
-    const nav = document.getElementById('nav');
-    const menu = document.getElementById('menu');
-    const links = document.getElementById('links');
+<section id="portfolio">
+ <div class="container">
+  <div class="section-head reveal"><div><div class="eyebrow">03 — Portfolio</div><h2>Selected <span class="gold">works.</span></h2></div>
+   <div class="filters"><button class="filter active" data-filter="all">Semua</button><button class="filter" data-filter="branding">Branding</button><button class="filter" data-filter="poster">Poster</button><button class="filter" data-filter="visual">Visual</button></div>
+  </div>
+  <div class="portfolio-grid">
+   <article class="work reveal" data-cat="branding" data-title="Noir Identity" data-desc="Eksplorasi identitas brand dengan nuansa hitam dan gold." data-art="art1"><div class="art art1"></div><div class="work-info"><div class="eyebrow">Branding</div><h3>Noir Identity</h3><p>Elegant visual identity · Click to explore</p></div></article>
+   <article class="work reveal" data-cat="poster" data-title="Golden Night" data-desc="Poster event dengan pendekatan editorial dan aksen cahaya keemasan." data-art="art2"><div class="art art2"></div><div class="work-info"><div class="eyebrow">Poster</div><h3>Golden Night</h3><p>Event campaign poster · Click to explore</p></div></article>
+   <article class="work reveal" data-cat="visual" data-title="Frame of Mind" data-desc="Eksperimen komposisi, portrait, dan framing untuk visual personal." data-art="art3"><div class="art art3"></div><div class="work-info"><div class="eyebrow">Visual</div><h3>Frame of Mind</h3><p>Portrait exploration · Click to explore</p></div></article>
+   <article class="work reveal" data-cat="poster" data-title="Afterglow" data-desc="Poster minimal dengan permainan cahaya, ruang kosong, dan tipografi." data-art="art4"><div class="art art4"></div><div class="work-info"><div class="eyebrow">Poster</div><h3>Afterglow</h3><p>Minimal visual study · Click to explore</p></div></article>
+   <article class="work reveal" data-cat="branding" data-title="Aurelia" data-desc="Konsep brand premium dengan karakter klasik dan modern." data-art="art5"><div class="art art5"></div><div class="work-info"><div class="eyebrow">Branding</div><h3>Aurelia</h3><p>Premium identity concept · Click to explore</p></div></article>
+   <article class="work reveal" data-cat="visual" data-title="Light Notes" data-desc="Eksplorasi abstrak yang memadukan glow, garis, dan tekstur visual." data-art="art6"><div class="art art6"></div><div class="work-info"><div class="eyebrow">Visual</div><h3>Light Notes</h3><p>Abstract visual experiment · Click to explore</p></div></article>
+  </div>
+ </div>
+</section>
 
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30));
-    menu.addEventListener('click', () => links.classList.toggle('open'));
-    document.querySelectorAll('.links a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+<section id="contact">
+ <div class="container contact-grid">
+  <div class="contact-copy reveal"><div class="eyebrow">04 — Kontak</div><h2>Let's make something <span class="gold">memorable.</span></h2><p>Punya ide, tugas desain, project sekolah, atau kolaborasi? Kirim pesan dan mari mulai dari sebuah konsep kecil.</p>
+   <div class="contact-line"><b>Email</b><span>dian@example.com</span></div><div class="contact-line"><b>Instagram</b><span>@dianabidin</span></div><div class="contact-line"><b>Location</b><span>Indonesia</span></div>
+  </div>
+  <form class="form reveal" id="contactForm"><div class="field"><label>Nama</label><input required placeholder="Nama kamu"></div><div class="field"><label>Email</label><input type="email" required placeholder="email@contoh.com"></div><div class="field"><label>Pesan</label><textarea required placeholder="Ceritakan project atau ide kamu..."></textarea></div><button class="btn primary magnetic">Kirim Pesan →</button><div class="form-msg" id="formMsg"></div></form>
+ </div>
+</section>
+</main>
 
-    // Reveal on scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+<footer>© <span id="year"></span> Dian Abidin · Designed with intention.</footer>
 
-    // Portfolio filter
-    const filters = document.querySelectorAll('.filter');
-    const works = document.querySelectorAll('.work');
-    filters.forEach(btn => btn.addEventListener('click', () => {
-      filters.forEach(x => x.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      works.forEach(work => {
-        const show = filter === 'all' || work.dataset.cat === filter;
-        work.classList.toggle('hidden', !show);
-      });
-    }));
+<div class="modal" id="modal">
+ <button class="close" id="close">×</button>
+ <div class="modal-box"><div class="modal-art" id="modalArt"></div><div class="modal-body"><div class="eyebrow" id="modalCat"></div><h3 id="modalTitle"></h3><p id="modalDesc"></p><button class="btn primary" id="modalClose">Tutup Project</button></div></div>
+</div>
 
-    // Simple contact feedback
-    document.getElementById('contactForm').addEventListener('submit', e => {
-      e.preventDefault();
-      const msg = document.getElementById('formMsg');
-      msg.textContent = 'Pesan siap dikirim. Terima kasih sudah menghubungi!';
-      e.target.reset();
-    });
+<script>
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+/* loader */
+addEventListener('load',()=>setTimeout(()=>{$('#loader').classList.add('hide');document.body.classList.remove('lock')},900));
 
-    // Tiny cursor glow — disabled on touch devices
-    if (matchMedia('(pointer:fine)').matches) {
-      const glow = document.createElement('div');
-      glow.style.cssText = 'position:fixed;left:0;top:0;width:180px;height:180px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(214,169,77,.10),transparent 68%);transform:translate(-50%,-50%);mix-blend-mode:screen;';
-      document.body.appendChild(glow);
-      addEventListener('pointermove', e => { glow.style.left=e.clientX+'px'; glow.style.top=e.clientY+'px'; });
-    }
-  </script>
+/* nav */
+const nav=$('#nav'), links=$('#links');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>35));
+$('#menu').onclick=()=>links.classList.toggle('open');
+$$('.links a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+
+/* reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
+$$('.reveal').forEach(e=>io.observe(e));
+
+/* filter */
+$$('.filter').forEach(btn=>btn.onclick=()=>{
+ $$('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');
+ const f=btn.dataset.filter;
+ $$('.work').forEach(w=>w.style.display=(f==='all'||w.dataset.cat===f)?'block':'none');
+});
+
+/* project modal */
+const modal=$('#modal'), modalArt=$('#modalArt');
+$$('.work').forEach(w=>w.onclick=()=>{
+ $('#modalCat').textContent=w.dataset.cat;
+ $('#modalTitle').textContent=w.dataset.title;
+ $('#modalDesc').textContent=w.dataset.desc;
+ modalArt.className='modal-art '+w.dataset.art;
+ modal.classList.add('open');document.body.classList.add('lock');
+});
+function closeModal(){modal.classList.remove('open');document.body.classList.remove('lock')}
+$('#close').onclick=closeModal;$('#modalClose').onclick=closeModal;
+modal.onclick=e=>{if(e.target===modal)closeModal()};
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+/* form */
+$('#contactForm').onsubmit=e=>{e.preventDefault();$('#formMsg').textContent='Pesan siap dikirim. Terima kasih sudah menghubungi!';e.target.reset()};
+
+/* magnetic buttons */
+if(matchMedia('(pointer:fine)').matches){
+ const cursor=$('#cursor'),dot=$('#cursorDot');let mx=0,my=0,cx=0,cy=0;
+ addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+ function tick(){cx+=(mx-cx)*.15;cy+=(my-cy)*.15;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(tick)}tick();
+ $$('.magnetic,.work,.links a').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
+  el.addEventListener('mouseleave',()=>{cursor.classList.remove('hover');el.style.transform=''});
+  if(el.classList.contains('magnetic'))el.addEventListener('mousemove',e=>{
+   const r=el.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)*.15,y=(e.clientY-r.top-r.height/2)*.15;
+   el.style.transform=`translate(${x}px,${y}px)`;
+  });
+ }
+}
+
+/* subtle hero parallax */
+if(matchMedia('(pointer:fine)').matches){
+ addEventListener('pointermove',e=>{
+  const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+  const bg=$('.hero-bg'),frame=$('.frame');
+  bg.style.transform=`scale(1.04) translate(${x*-7}px,${y*-5}px)`;
+  frame.style.transform=`rotate(1.2deg) translate(${x*5}px,${y*5}px)`;
+ });
+}
+$('#year').textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
